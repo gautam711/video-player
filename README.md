@@ -53,3 +53,4 @@ https://video-player-blush.vercel.app/
 ![Performance](https://video-player-blush.vercel.app/performance.png)
 
 PS: I build this in one day only.
+For large list, virtual scroll and infinite scroll is used. But because of the time constraint I was only to finish this much
