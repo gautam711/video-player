@@ -49,7 +49,7 @@ function Playlist() {
   };
 
   return (
-    <div className="sm:w-full lg:w-1/4 h-full text-ellipsis max-h-[90vh] mt-8 lg:mt-0">
+    <div className="min-w-full sm:min-w-0 lg:w-1/4 lg:w-1/4 h-full text-ellipsis max-h-[90vh] mt-8 lg:mt-0">
       <div className="flex flex-col text-left  h-24 text-xl text-bold bg-zinc-900 px-4 pt-2 mb-2 items-start rounded-t-lg">
         <div>
           {" "}
