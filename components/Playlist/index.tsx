@@ -41,6 +41,7 @@ function Playlist() {
   };
 
   const handleChangeVideo = (video: IVideo) => {
+    sessionStorage.removeItem("lastVideoDuration");
     const params = new URLSearchParams(searchParams);
     params.set("video", video?.sources[0]);
     setcurrentVideo(video);
