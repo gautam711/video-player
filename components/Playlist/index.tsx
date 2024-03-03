@@ -62,7 +62,7 @@ function Playlist() {
         <Search />
       </div>
       <div
-        className="max-h-[80vh]"
+        className="max-h-[75vh]"
         style={{
           overflowY: "scroll",
           overflowX: "hidden",
