@@ -1,7 +1,7 @@
 "use client";
 import { VideoContext } from "@/features/VideoProvider";
 import { IVideo } from "@/utils/data";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import ListItem from "./ListItem";
 import Search from "./Search";
