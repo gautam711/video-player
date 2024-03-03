@@ -12,6 +12,7 @@ function VideoPlayer() {
   const { videos, currentVideo, setcurrentVideo } = useContext(VideoContext);
 
   const [duration, setDuration] = useState<number>(0);
+  const [playing, setPlaying] = useState<boolean>(false);
 
   useEffect(() => {
     if (video) {
@@ -55,6 +56,60 @@ function VideoPlayer() {
       }
     };
   }, [video, currentVideo]);
+
+  useEffect(() => {
+    // Add event listeners when the component mounts
+    document.addEventListener("keydown", handleSpacebar);
+    document.addEventListener("keydown", handleArrowRight);
+    document.addEventListener("keydown", handleArrowLeft);
+
+    // Remove event listeners when the component unmounts
+    return () => {
+      document.removeEventListener("keydown", handleSpacebar);
+      document.removeEventListener("keydown", handleArrowRight);
+      document.removeEventListener("keydown", handleArrowLeft);
+    };
+  }, [playing]);
+
+  const handleSpacebar = (e: KeyboardEvent) => {
+    if (e.key === " " || e.key === "Spacebar") {
+      e.preventDefault();
+      togglePlayPause();
+    }
+  };
+
+  const handleArrowRight = (e: KeyboardEvent) => {
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      seek(5);
+    }
+  };
+
+  const handleArrowLeft = (e: KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      seek(-5);
+    }
+  };
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      const video = videoRef.current;
+      if (playing) {
+        video.pause();
+      } else {
+        video.play();
+      }
+      setPlaying(!playing);
+    }
+  };
+
+  const seek = (seconds: number) => {
+    if (videoRef.current) {
+      const video = videoRef.current;
+      video.currentTime += seconds;
+    }
+  };
 
   const handleVideoEnded = () => {
     setDuration(0);

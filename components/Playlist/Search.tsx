@@ -25,6 +25,7 @@ function Search() {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
     setInputValue(event.target.value);
   };
 
