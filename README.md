@@ -50,4 +50,6 @@ https://video-player-blush.vercel.app/
 	- data (consists of video list, filter function)
 	
 ### Performance
-![Performance]('./assets/performance.png)
+![Performance](https://video-player-blush.vercel.app/performance.png)
+
+PS: I build this in one day only.
